@@ -56,7 +56,7 @@ How to Use???
 WS would look like this
 bash-3.2$ ls -lrt
 total 24
--rwxr-xr-x  1 bhagisha  admin  670 Sep  7 16:20 URL_Lookup_App.py
-drwxr-xr-x  7 bhagisha  admin  238 Sep  7 16:33 URL-Lookup
+-rwxr-xr-x  1 bhagisha  admin  670 Sep  5 16:20 URL_Lookup_App.py
+drwxr-xr-x  7 bhagisha  admin  238 Sep  5 16:33 URL-Lookup
 bash-3.2$ pwd
 /Applications/MAMP/cgi-bin
