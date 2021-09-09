@@ -102,7 +102,7 @@ To implement the  URL Lookup Service, I have selected following Tools
 ===============================
 
    Request:
-	http://localhost:9090/add-to-blacklist/www.whalidgroup.com/user=rahul&empid=01234
+	http://localhost:9090/add-to-blacklist/www.whalidgroup.com/user=bhagisha&empid=01234
 
    Response:
 	{"hostName":"whalidgroup.com","fullURL":"user=rahul&empid=01234","severity":1,"description":"Malicious URL has beed added explicitly"}
@@ -112,25 +112,25 @@ To implement the  URL Lookup Service, I have selected following Tools
 ============================
 
    Request:
-	http://localhost:9090/urlinfo/1/whalidgroup.com/user=rahul&empid=04123/
+	http://localhost:9090/urlinfo/1/whalidgroup.com/user=bhagisha&empid=04123/
 
    Response:
-	{"result":[{"severity":1,"hostName":"whalidgroup.com","full-url":"user=rahul&empid=04123","description":"Malicious URL"}],"success":false,"message":"Malicious URL present in Blacklist DB"}
+	{"result":[{"severity":1,"hostName":"whalidgroup.com","full-url":"user=bhagisha&empid=04123","description":"Malicious URL"}],"success":false,"message":"Malicious URL present in Blacklist DB"}
 
 ## URL Lookup - Good URL
 ==============================
 
    Request:
-	http://localhost:9090/urlinfo/1/www.google.com/user=rahul&empid=04123/
+	http://localhost:9090/urlinfo/1/www.google.com/user=bhagisha&empid=04123/
 
    Response:
-	{"result":[{"severity":0,"hostName":"google.com","full-url":"user=rahul&empid=04123","description":"URL not found in the database, need to be scanned.."}],"success":true}
+	{"result":[{"severity":0,"hostName":"google.com","full-url":"user=bhagisha&empid=04123","description":"URL not found in the database, need to be scanned.."}],"success":true}
 
 ## Marking a blacklisted URL as Whitelisted
 ================================================
 
    Request:
-	http://localhost:9090/markAsWhiteListed/whalidgroup.com/user=rahul&empid=04123/
+	http://localhost:9090/markAsWhiteListed/whalidgroup.com/user=bhagisha&empid=04123/
 
    Response:
 	{"hostName":"whalidgroup.com","fullURL":"user=rahul&empid=04123","severity":0,"description":"URL has been marked as whitelisted explicitly"}
@@ -139,10 +139,10 @@ To implement the  URL Lookup Service, I have selected following Tools
 =============================================================================
 
    Request:
-	http://localhost:9090/urlinfo/1/whalidgroup.com/user=rahul&empid=04123/
+	http://localhost:9090/urlinfo/1/whalidgroup.com/user=bhagisha&empid=04123/
 
    Response:
-	{"result":[{"severity":0,"hostName":"whalidgroup.com","full-url":"user=rahul&empid=04123","description":"URL has been marked as whitelisted explicitly"}],"success":true}
+	{"result":[{"severity":0,"hostName":"whalidgroup.com","full-url":"user=bhagisha&empid=04123","description":"URL has been marked as whitelisted explicitly"}],"success":true}
 
 
 ## Unit Test Cases
