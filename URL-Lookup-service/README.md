@@ -60,3 +60,24 @@ total 24
 drwxr-xr-x  7 bhagisha  admin  238 Sep  5 16:33 URL-Lookup
 bash-3.2$ pwd
 /Applications/MAMP/cgi-bin
+
+
+Questions: Give some thought to the following:
+======================================================
+
+Q1. The size of the URL list could grow infinitely. How might you scale this beyond the memory capacity of the system? 
+
+Answer: Yes, this is common scenario. That’s why I. Have selected NoSQL Document DB(Mongo DB). We should use Elastic Search to scale this problem.
+
+Q2. Assume that the number of requests will exceed the capacity of a single system, describe how might you solve this, and how might this change if you have to distribute this workload to an additional region, such as Europe. 
+
+Answer: We need to think for load based cluster approach or horizontal scaling.
+
+Q3. What are some strategies you might use to update the service with new URLs? Updates may be as much as 5 thousand URLs a day with updates arriving every 10 minutes.
+
+Answer: Here is the strategy -
+
+Requested URL needs to be checked in Black listed DB first whether it exists or not, if exist report that URL Blacklisted
+If the URL is not present in the BlackList DB, then it should be submitted for analysis/detection, if severity level is higher(malware), then URL should be inserted into BlackListDB as malware.
+Unknown URL needs to be analysed if other services doesn’t know the reputation or URL doesn’t match with any access control rule or any other locos data set.
+Most of the times, cloud service/other service updates the data once per day depending on the traffic congestion. Auto update might helps with different scheduler (30 mins interval or weekly or day basis), but data should be always current.
